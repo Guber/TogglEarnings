@@ -106,9 +106,9 @@ def getEarnings(name):
 
     if END_DATE.month == dt.date.today().month:
         print("Projected earnings till end of month: {} {}.".format(
-            total_earnings + (np.busday_count(END_DATE, dt.date(END_DATE.year, END_DATE.month,
+            round(total_earnings + (np.busday_count(END_DATE, dt.date(END_DATE.year, END_DATE.month,
                                                                monthrange(END_DATE.year, END_DATE.month)[1]))  + 1) * (
-                    total_earnings / business_days), CURRENCY))
+                    total_earnings / business_days), 2), CURRENCY))
 
     print("-------------------------------------------------")
 
